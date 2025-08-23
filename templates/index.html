@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Image Recognition Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width:800px; margin:2rem auto; padding:0 1rem; }
+    .card { padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    img.preview { max-width:300px; height:auto; border-radius:6px; display:block; margin:1rem 0; }
+    .result { margin-top:1rem; font-size:1.1rem; }
+    .muted { color:#555; font-size:0.9rem; }
+    label { display:block; margin-bottom:0.5rem; font-weight:bold; }
+    button { margin-top:1rem; padding:0.5rem 1rem; font-size:1rem; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Image Recognition — CNN</h2>
+    <p class="muted">Upload an image to classify it (model must exist at <code>models/best_model.h5</code>).</p>
+
+    <form method="post" enctype="multipart/form-data">
+      <label for="file">Choose an image to upload:</label>
+      <input type="file" id="file" name="file" accept="image/*" required>
+      <button type="submit">Upload & Predict</button>
+    </form>
+
+    {% if filename %}
+      <h3>Prediction</h3>
+      <img class="preview" src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded image">
+      <div class="result"><strong>Label:</strong> {{ label }}</div>
+      <div class="muted"><strong>Confidence:</strong> {{ confidence }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>
