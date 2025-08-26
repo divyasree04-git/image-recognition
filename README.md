@@ -31,6 +31,7 @@ Start server:
    python app.py
 
 Open http://127.0.0.1:5000 in your browser, upload an image, get prediction.
+https://znb9lskw-5000.inc1.devtunnels.ms/
 
 ## Notes
 - If you used CIFAR-10 (32x32 images), update TARGET_SIZE in app.py to (32,32).
