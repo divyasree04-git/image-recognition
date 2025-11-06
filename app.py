@@ -1,5 +1,5 @@
-from flask import Flask, request, render_template_string, url_for
-import numpy as np
+from flask import Flask, request, render_template_string, url_for # pyright: ignore[reportMissingImports]
+import numpy as np # pyright: ignore[reportMissingImports]
 from tensorflow.keras.applications import MobileNetV2 # pyright: ignore[reportMissingImports]
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input, decode_predictions # pyright: ignore[reportMissingImports]
 from tensorflow.keras.preprocessing import image # pyright: ignore[reportMissingImports]
